@@ -1,27 +1,31 @@
-from playsound import playsound
+
 import time
+import datetime
+import pygame
 
-CLEAR = "\033[2j"
-CLEAR_AND_RETURN = "\033[H"
+def set_alarm(alarm_time):
+    print(f"Alarm set for {alarm_time}")
+    sound_file = "alarm.mp3"
+    is_running = True
 
-def alarm(seconds):
-    time_elapsed = 0
+    while is_running:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(current_time)
 
-    print(CLEAR)
-    while time_elapsed < seconds:
+        if current_time == alarm_time:
+            print("WAKE UP! 🍿")
+
+            pygame.mixer.init()
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.play()
+
+            while pygame.mixer.music.get_busy():
+                time.sleep(1)
+
+            is_running = False
+
         time.sleep(1)
-        time_elapsed += 1
 
-        time_left = seconds - time_elapsed
-        minutes_left = time_left // 60
-        seconds_left = time_left % 60
-
-        print(f"Alarm will sound in: {minutes_left:02d}:{seconds_left:02d}")
-    playsound("alarm.mp3")
-
-minutes = int(input("How many minutes to wait: "))
-seconds = int(input("How many seconds to wait: "))
-total_seconds = minutes * 60 + seconds
-alarm(total_seconds)
-
-
+if __name__ == "__main__":
+    alarm_time = input("Enter the alarm time (HH:MM:SS): ")
+    set_alarm(alarm_time)
