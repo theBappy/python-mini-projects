@@ -1,5 +1,1 @@
-Hello world my name is Tim and I am the best at making tutorials!
-This is another test block of text for this project!
-Subscribe to Tech With Tim on YouTube.
-Okay this is just another test to make sure the app is working okay!
-The quick brown fox jumped over the rest of the sentence that I forget.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet risus vel arcu malesuada pretium. Praesent sed nunc quis ligula lacinia commodo sit amet vitae lorem. Morbi eget semper sem. Integer interdum consectetur orci id ullamcorper. Nam vitae iaculis sem. Suspendisse mollis finibus pellentesque. Suspendisse posuere sem diam, tempor volutpat velit bibendum non. Praesent vel viverra magna, eu tempus urna. Proin non eros eu urna dignissim lobortis vel quis lacus. Praesent maximus, nisl ut hendrerit vehicula, magna odio cursus arcu, sit amet pulvinar arcu quam a mi.
