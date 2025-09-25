@@ -1,38 +1,29 @@
 import random
 
-user_wins = 0
-computer_wins = 0
+options = ("rock", "paper", "scissors")
 
-options = ["rock", "paper", "scissors"]
+running = True
 
-while True:
-    user_input = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
-    if user_input.lower() == 'q':
-        break
-    if user_input not in options:
-        continue
+while running:
+    player = None
+    computer = random.choice(options)
 
-    random_number = random.randint(0, 2)
+    while player not in options:
+        player = input("Enter a choice (rock, paper, scissors): ")
 
-    computer_pick = options[random_number]
-
-    print("Computer picked", computer_pick + ".")
-
-    if user_input == "rock" and computer_pick == "scissors":
-        print("you won")
-        user_wins += 1
-
-    elif user_input == 'scissors' and computer_pick== 'paper':
-        print("you win")
-        user_wins += 1
-    
-    elif user_input == 'scissors' and computer_pick == 'paper':
-        print("you win")
-        user_wins += 1
+    if player == computer:
+        print("It's a tie!")
+    elif player == "rock" and computer == "scissors":
+        print("YOU WIN")
+    elif player == "paper" and computer == "rock":
+        print("YOU WIN")
+    elif player == "scissors" and computer == "paper":
+        print("YOU WIN")
     else:
-        print("you lost")
-        computer_wins += 1
+        print("YOU LOSE")
 
-print("you won ", user_wins, "times. ")
-print("The computer won ", computer_wins, "times. ")
-print("Goodbye")
+    if not input("Play again? (y/n): ").lower() == "y":
+        running = False
+
+print("Thanks for playing!")
+
